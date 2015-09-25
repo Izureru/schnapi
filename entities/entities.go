@@ -1,10 +1,14 @@
-package main
+package entities
 
-import "time"
+import (
+	"labix.org/v2/mgo/bson"
+	"time"
+)
 
 type User struct {
-	Name     string    `json:"name"`
-	Wardrobe []Clothes `json:"wardrobe"`
+	Id       bson.ObjectId `bson:"_id,omitempty"`
+	Name     string        `json:"name"`
+	Wardrobe []Clothes     `json:"wardrobe"`
 }
 
 type Users []User
